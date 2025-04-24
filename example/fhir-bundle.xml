@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" ?><Bundle xmlns="http://hl7.org/fhir">
+	<meta>
+		<tag>
+			<system value="urn:local:/System/TODO"></system>
+			<code value="TODO"></code>
+		</tag>
+	</meta>
+	<type value="collection"></type>
+	<link>
+		<relation value="fhir-base"></relation>
+		<url value="urn:local:/"></url>
+	</link>
+	<entry>
+		<fullUrl value="urn:local:/Patient/1"></fullUrl>
+		<resource>
+			<Patient>
+				<id value="1"></id>
+				<name>
+					<family value="Müller"></family>
+					<given value="John"></given>
+				</name>
+				<gender value="male"></gender>
+				<birthDate value="1999-02-28"></birthDate>
+				<!-- TODO address -->
+				
+			</Patient>
+		</resource>
+	</entry>
+	<!-- TODO communication resource for alert 2025-03-31 21:59:00 -->
+	<!-- TODO location resource for vehicle 1-83-1 -->
+	<!-- TODO location resource for "Transport von" -->
+	<!-- TODO location/organization resource for "Transport to" -->
+  <!-- TODO coverage + organization resource for insurance/insurer -->
+
+	<entry>
+		<fullUrl value="urn:local:/Encounter/1"></fullUrl>
+		<resource>
+			<Encounter>
+				<id value="1"></id>
+				<identifier>
+					<value value="6f248b54c4b64f2d4d29452dfa74139d"></value>
+				</identifier>
+				<status value="finished"></status>
+				<class>
+					<system value="http://terminology.hl7.org/CodeSystem/v3-ActCode"></system>
+					<code value="EMER"></code>
+					<display value="Emergency"/>
+				</class>
+				<subject>
+					<reference value="Patient/1"></reference>
+				</subject>
+				<period>
+					<start value="2025-03-31T22:17:00+02:00"></start>
+					<end value="2025-03-31T23:30:22+02:00"></end>
+				</period>
+			</Encounter>
+		</resource>
+	</entry>
+	<entry>
+		<fullUrl value="urn:local:/Questionnaire/1"></fullUrl>
+		<resource>
+			<Questionnaire>
+				<id value="1"></id>
+				<title value="Notfall Einsatzprotokoll nach DIVI 6.0 und MIND 4.0"></title>
+				<status value="draft"></status>
+				<subjectType value="Practitioner"/>
+				<jurisdiction> 
+          <coding> 
+            <system value="urn:iso:std:iso:3166"/> 
+            <code value="DE"/> 
+          </coding> 
+        </jurisdiction> 
+        <item> 
+          <linkId value="erstbefund"/> 
+          <text value="Erstbefund"/> 
+          <type value="group"/> 
+
+          <item> 
+            <linkId value="eb_zeitpunkt"/> 
+            <text value="Erstbefund Zeitpunkt"/> 
+            <type value="dateTime"/> 
+          </item> 
+
+          <item> 
+            <linkId value="kreislauf"/> 
+            <text value="Kreislauf"/>
+            <type value="choice"/> 
+            <answerOption> 
+              <valueCoding> 
+                <code value="nicht untersucht"/> 
+              </valueCoding> 
+            </answerOption> 
+            <answerOption> 
+              <valueCoding> 
+                <code value="unauffällig"/> 
+              </valueCoding> 
+            </answerOption> 
+            <answerOption> 
+              <valueCoding> 
+                <code value="Blutung"/> 
+              </valueCoding> 
+            </answerOption> 
+            <item> 
+              <linkId value="kreislauf_pathauff"/> 
+              <text value="path. Auffälligkeiten"/> 
+              <type value="string"/> 
+            </item> 
+          </item> 
+
+          <item> 
+            <linkId value="atemwege"/> 
+            <text value="Atemwege"/> 
+            <type value="choice"/> 
+            <answerOption> 
+              <valueCoding> 
+                <code value="frei"/> 
+              </valueCoding> 
+            </answerOption> 
+            <answerOption> 
+              <valueCoding> 
+                <code value="gefährdet"/> 
+              </valueCoding> 
+            </answerOption> 
+            <answerOption> 
+              <valueCoding> 
+                <code value="nicht untersucht"/> 
+              </valueCoding> 
+            </answerOption> 
+            <answerOption> 
+              <valueCoding> 
+                <code value="nicht beurteilbar"/> 
+              </valueCoding> 
+            </answerOption> 
+            <answerOption> 
+              <valueCoding> 
+                <code value="Stridor exsp."/> 
+              </valueCoding> 
+            </answerOption> 
+            <answerOption> 
+              <valueCoding> 
+                <code value="Stridor insp."/> 
+              </valueCoding> 
+            </answerOption> 
+            <answerOption> 
+              <valueCoding> 
+                <code value="Atemwegsverlegung"/> 
+              </valueCoding> 
+            </answerOption> 
+          </item> 
+
+
+          <item> 
+            <linkId value="messwerteInitial"/> 
+            <text value="Messwerte Initial"/> 
+            <type value="group"/> 
+            <item> 
+              <linkId value="mi_af"/> 
+              <text value="AF"/> 
+              <type value="decimal"/> 
+            </item> 
+            <item> 
+              <linkId value="mi_spo2"/> 
+              <text value="SpO2"/> 
+              <type value="decimal"/> 
+            </item>
+            <item> 
+              <linkId value="mi_cohb"/> 
+              <text value="CO Hb"/> 
+              <type value="decimal"/> 
+            </item> 
+            <!-- TODO more measurements -->
+          </item> 
+        </item> 				
+			</Questionnaire>
+		</resource>
+		<!-- TODO QuestionnaireResponse -->
+	</entry>
+	<!--END Encounter/1: 2310239-->
+	<!--END Patient/1: 110516-->
+
+</Bundle>
